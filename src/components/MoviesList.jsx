@@ -2,9 +2,25 @@ function MoviesList({ movies, series }) {
   const posterUrl = "https://image.tmdb.org/t/p/w342";
 
   const getFlag = (language) => {
-    const Languages = ["it", "en"];
-    return Languages.includes(language) ? `/images/${language}.png` : `/images/placeholder.png`;
+    const languages = ["it", "en"];
+    return languages.includes(language) ? `/images/${language}.png` : `/images/placeholder.png`;
   };
+
+  const getStars = (vote) => {
+    const stars = Math.ceil(vote / 2);
+    let starIcons = [];
+
+    for (let i = 0; i < stars; i++) {
+      starIcons.push(<i key={`full-${i}`} className="fas fa-star"></i>);
+    }
+
+    for (let i = stars; i < 5; i++) {
+      starIcons.push(<i key={`empty-${i}`} className="far fa-star"></i>);
+    }
+
+    return starIcons;
+  };
+  
 
   return (
     <div>
@@ -28,7 +44,7 @@ function MoviesList({ movies, series }) {
                   style={{ width: "24px", height: "24px" }}
                 />
               </p>
-              <p>Voto: {movie.vote_average}</p>
+              <p>Voto: {getStars(movie.vote_average)}</p>
             </li>
           ))}
         </ul>
@@ -54,7 +70,7 @@ function MoviesList({ movies, series }) {
                   style={{ width: "24px", height: "24px" }}
                 />
               </p>
-              <p>Voto: {serie.vote_average}</p>
+              <p>Voto: {getStars(serie.vote_average)}</p>
             </li>
           ))}
         </ul>
