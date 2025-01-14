@@ -1,0 +1,174 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Utilities */
+li {
+    list-style-type: none;
+}
+
+h2,
+h3,
+p {
+    margin: 5px 0;
+}
+
+
+body,
+html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Styling */
+body {
+    background-color: #141414;
+    color: white;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #111;
+    color: white;
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #e50914;
+}
+
+.searchbar input {
+    padding: 8px;
+    font-size: 14px;
+    width: 200px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.searchbar button {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.searchbar button:hover {
+    background-color: #b20710;
+}
+
+/* Movies List */
+.movies-section,
+.series-section {
+    margin-bottom: 40px;
+}
+
+.movies-container,
+.series-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0;
+    list-style-type: none;
+}
+
+.movie-card,
+.series-card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-card:hover,
+.series-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* Card Image */
+.movie-image,
+.series-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay container */
+.movie-info,
+.series-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    opacity: 0;
+    padding: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .movie-info,
+.series-card:hover .series-info {
+    opacity: 1;
+}
+
+.movie-title,
+.series-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.movie-original-title,
+.series-original-name {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.language-flag {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+.movie-vote,
+.series-vote {
+    margin-top: 10px;
+}
+
+.fas.fa-star {
+    color: #f1c40f;
+    font-size: 14px;
+}
+
+.far.fa-star {
+    color: #bdc3c7;
+    font-size: 14px;
+}

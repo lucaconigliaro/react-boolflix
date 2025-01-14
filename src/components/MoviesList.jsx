@@ -20,57 +20,60 @@ function MoviesList({ movies, series }) {
 
     return starIcons;
   };
-  
 
   return (
-    <div>
-      <div>
+    <div className="container">
+      <div className="movies-section">
         <h1>Film</h1>
-        <ul>
+        <ul className="movies-container">
           {movies.map((movie) => (
-            <li key={movie.id}>
+            <li key={movie.id} className="movie-card">
               <img
                 src={`${posterUrl}${movie.poster_path}`}
                 alt={movie.title}
-                style={{ width: "150px", height: "auto" }}
+                className="movie-image"
               />
-              <h2>{movie.title}</h2>
-              <h3>{movie.original_title}</h3>
-              <p>
-                Lingua:{" "}
-                <img
-                  src={getFlag(movie.original_language)}
-                  alt={movie.original_language}
-                  style={{ width: "24px", height: "24px" }}
-                />
-              </p>
-              <p>Voto: {getStars(movie.vote_average)}</p>
+              <div className="movie-info">
+                <h2 className="movie-title">{movie.title}</h2>
+                <h3 className="movie-original-title">{movie.original_title}</h3>
+                <p>
+                  Lingua:{" "}
+                  <img
+                    src={getFlag(movie.original_language)}
+                    alt={movie.original_language}
+                    className="language-flag"
+                  />
+                </p>
+                <p className="movie-vote">Voto: {getStars(movie.vote_average)}</p>
+              </div>
             </li>
           ))}
         </ul>
       </div>
 
-      <div>
-        <h1>Serie TV</h1>
-        <ul>
+      <div className="series-section">
+        <h1>Serie Tv</h1>
+        <ul className="series-container">
           {series.map((serie) => (
-            <li key={serie.id}>
+            <li key={serie.id} className="series-card">
               <img
                 src={`${posterUrl}${serie.poster_path}`}
                 alt={serie.name}
-                style={{ width: "150px", height: "auto" }}
+                className="series-image"
               />
-              <h2>{serie.name}</h2>
-              <h3>{serie.original_name}</h3>
-              <p>
-                Lingua:{" "}
-                <img
-                  src={getFlag(serie.original_language)}
-                  alt={serie.original_language}
-                  style={{ width: "24px", height: "24px" }}
-                />
-              </p>
-              <p>Voto: {getStars(serie.vote_average)}</p>
+              <div className="series-info">
+                <h2 className="series-title">{serie.name}</h2>
+                <h3 className="series-original-name">{serie.original_name}</h3>
+                <p>
+                  Lingua:{" "}
+                  <img
+                    src={getFlag(serie.original_language)}
+                    alt={serie.original_language}
+                    className="language-flag"
+                  />
+                </p>
+                <p className="series-vote">Voto: {getStars(serie.vote_average)}</p>
+              </div>
             </li>
           ))}
         </ul>

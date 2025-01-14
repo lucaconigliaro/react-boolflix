@@ -33,9 +33,9 @@ function App() {
         query: value,
       },
     })
-    .then((resp) => {
-      setSeries(resp.data.results)
-    });
+      .then((resp) => {
+        setSeries(resp.data.results)
+      });
   };
 
   const getItems = () => {
