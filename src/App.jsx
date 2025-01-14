@@ -10,6 +10,7 @@ const apiUrl = "https://api.themoviedb.org/3/search";
 function App() {
   const [value, setValue] = useState("");
   const [movie, setMovie] = useState([]);
+  const [series, setSeries] = useState([])
 
 
   const getMovies = () => {
@@ -25,8 +26,21 @@ function App() {
       });
   };
 
+  const getSeries = () => {
+    axios.get(`${apiUrl}/tv`, {
+      params: {
+        api_key: apiKey,
+        query: value,
+      },
+    })
+    .then((resp) => {
+      setSeries(resp.data.results)
+    });
+  };
+
   const getItems = () => {
     getMovies();
+    getSeries();
   };
 
   const GlobalProviderValue = {
@@ -34,6 +48,7 @@ function App() {
     setValue,
     getItems,
     movie,
+    series
   };
 
   return (
@@ -41,6 +56,5 @@ function App() {
       <HomePage />
     </GlobalContext.Provider>
   );
-}
-
+};
 export default App;

@@ -4,12 +4,12 @@ import MoviesList from "../components/MoviesList";
 import Searchbar from "../components/Searchbar"; 
 
 function HomePage() {
-  const { movie } = useContext(GlobalContext); 
+  const { movie, series } = useContext(GlobalContext); 
 
   return (
     <div>
       <Searchbar /> 
-      <MoviesList movies={movie} />
+      <MoviesList movies={movie} series={series} />
     </div>
   );
 }
