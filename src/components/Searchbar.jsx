@@ -4,6 +4,12 @@ import GlobalContext from '../context/GlobalContext';
 function Searchbar() {
   const { value, setValue, getItems } = useContext(GlobalContext);
 
+  function handleEnterKey(event) {
+    if  (event.key === `Enter`) {
+      getItems();
+    }
+  };
+
   return (
     <header className="header">
       <div className="logo">
@@ -15,6 +21,7 @@ function Searchbar() {
           value={value}
           onChange={(event) => setValue(event.target.value)}
           placeholder="Cerca Film o Serie..."
+          onKeyUp={handleEnterKey}
         />
         <button onClick={getItems}>Cerca</button>
       </div>

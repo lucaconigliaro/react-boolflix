@@ -23,7 +23,7 @@ function MoviesList({ movies, series }) {
 
   return (
     <div className="container">
-      <div className="movies-section">
+      <section className="movies-section">
         <h1>Film</h1>
         <ul className="movies-container">
           {movies.map((movie) => (
@@ -49,9 +49,9 @@ function MoviesList({ movies, series }) {
             </li>
           ))}
         </ul>
-      </div>
+      </section>
 
-      <div className="series-section">
+      <section className="series-section">
         <h1>Serie Tv</h1>
         <ul className="series-container">
           {series.map((serie) => (
@@ -77,7 +77,7 @@ function MoviesList({ movies, series }) {
             </li>
           ))}
         </ul>
-      </div>
+      </section>
     </div>
   );
 }
