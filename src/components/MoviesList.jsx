@@ -22,63 +22,69 @@ function MoviesList({ movies, series }) {
   };
 
   return (
-    <div className="container">
-      <section className="movies-section">
-        <h1>Film</h1>
-        <ul className="movies-container">
-          {movies.map((movie) => (
-            <li key={movie.id} className="movie-card">
-              <img
-                src={`${posterUrl}${movie.poster_path}`}
-                alt={movie.title}
-                className="movie-image"
-              />
-              <div className="movie-info">
-                <h2 className="movie-title">{movie.title}</h2>
-                <h3 className="movie-original-title">{movie.original_title}</h3>
-                <p>
-                  Lingua:{" "}
+    <main>
+      <div className="container">
+        <section className="section">
+          <h1>Film</h1>
+          <div className="row">
+            {movies.map((movie) => (
+              <div key={movie.id} className="col">
+                <div className="card">
                   <img
-                    src={getFlag(movie.original_language)}
-                    alt={movie.original_language}
-                    className="language-flag"
+                    src={`${posterUrl}${movie.poster_path}`}
+                    alt={movie.title}
+                    className="image"
                   />
-                </p>
-                <p className="movie-vote">Voto: {getStars(movie.vote_average)}</p>
+                  <div className="info">
+                    <h2 className="title">{movie.title}</h2>
+                    <h3 className="original-title">{movie.original_title}</h3>
+                    <p>
+                      Lingua:{" "}
+                      <img
+                        src={getFlag(movie.original_language)}
+                        alt={movie.original_language}
+                        className="language-flag"
+                      />
+                    </p>
+                    <p className="vote">Voto: {getStars(movie.vote_average)}</p>
+                  </div>
+                </div>
               </div>
-            </li>
-          ))}
-        </ul>
-      </section>
+            ))}
+          </div>
+        </section>
 
-      <section className="series-section">
-        <h1>Serie Tv</h1>
-        <ul className="series-container">
-          {series.map((serie) => (
-            <li key={serie.id} className="series-card">
-              <img
-                src={`${posterUrl}${serie.poster_path}`}
-                alt={serie.name}
-                className="series-image"
-              />
-              <div className="series-info">
-                <h2 className="series-title">{serie.name}</h2>
-                <h3 className="series-original-name">{serie.original_name}</h3>
-                <p>
-                  Lingua:{" "}
+        <section className="series-section">
+          <h1>Serie Tv</h1>
+          <div className="row">
+            {series.map((serie) => (
+              <div key={serie.id} className="col">
+                <div className="series-card">
                   <img
-                    src={getFlag(serie.original_language)}
-                    alt={serie.original_language}
-                    className="language-flag"
+                    src={`${posterUrl}${serie.poster_path}`}
+                    alt={serie.name}
+                    className="series-image"
                   />
-                </p>
-                <p className="series-vote">Voto: {getStars(serie.vote_average)}</p>
+                  <div className="series-info">
+                    <h2 className="series-title">{serie.name}</h2>
+                    <h3 className="series-original-name">{serie.original_name}</h3>
+                    <p>
+                      Lingua:{" "}
+                      <img
+                        src={getFlag(serie.original_language)}
+                        alt={serie.original_language}
+                        className="language-flag"
+                      />
+                    </p>
+                    <p className="series-vote">Voto: {getStars(serie.vote_average)}</p>
+                  </div>
+                </div>
               </div>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }
 

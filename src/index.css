@@ -20,13 +20,6 @@ p {
     margin: 5px 0;
 }
 
-
-body,
-html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-}
-
 /* Container */
 .container {
     max-width: 1200px;
@@ -52,7 +45,6 @@ header {
 
 .logo h1 {
     font-size: 24px;
-    margin: 0;
     color: #e50914;
 }
 
@@ -79,23 +71,26 @@ header {
     background-color: #b20710;
 }
 
+/* Row */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+
+/* Column */
+.col {
+    display: inline-block;
+    width: 20%; 
+    padding: 10px;
+}
+
 /* Movies List */
-.movies-section,
-.series-section {
+.section {
     margin-bottom: 40px;
 }
 
-.movies-container,
-.series-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px 0;
-    list-style-type: none;
-}
-
-.movie-card,
-.series-card {
+.card {
     position: relative;
     width: 200px;
     height: 300px;
@@ -106,23 +101,20 @@ header {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.movie-card:hover,
-.series-card:hover {
+.card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
 }
 
 /* Card Image */
-.movie-image,
-.series-image {
+.image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 /* Overlay container */
-.movie-info,
-.series-info {
+.info {
     position: absolute;
     top: 0;
     left: 0;
@@ -135,19 +127,16 @@ header {
     transition: opacity 0.3s ease;
 }
 
-.movie-card:hover .movie-info,
-.series-card:hover .series-info {
+.card:hover .info {
     opacity: 1;
 }
 
-.movie-title,
-.series-title {
+.title {
     font-size: 16px;
     margin-bottom: 5px;
 }
 
-.movie-original-title,
-.series-original-name {
+.original-name {
     font-size: 14px;
     color: #ddd;
 }
@@ -158,8 +147,7 @@ header {
     margin-left: 5px;
 }
 
-.movie-vote,
-.series-vote {
+.vote {
     margin-top: 10px;
 }
 

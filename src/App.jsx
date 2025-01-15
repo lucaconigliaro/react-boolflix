@@ -12,7 +12,6 @@ function App() {
   const [movie, setMovie] = useState([]);
   const [series, setSeries] = useState([])
 
-
   const getMovies = () => {
     axios
       .get(`${apiUrl}/movie`, {
