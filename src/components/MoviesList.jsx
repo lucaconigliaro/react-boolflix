@@ -54,20 +54,20 @@ function MoviesList({ movies, series }) {
           </div>
         </section>
 
-        <section className="series-section">
+        <section className="section">
           <h1>Serie Tv</h1>
           <div className="row">
             {series.map((serie) => (
               <div key={serie.id} className="col">
-                <div className="series-card">
+                <div className="card">
                   <img
                     src={`${posterUrl}${serie.poster_path}`}
                     alt={serie.name}
-                    className="series-image"
+                    className="image"
                   />
-                  <div className="series-info">
-                    <h2 className="series-title">{serie.name}</h2>
-                    <h3 className="series-original-name">{serie.original_name}</h3>
+                  <div className="info">
+                    <h2 className="title">{serie.name}</h2>
+                    <h3 className="original-name">{serie.original_name}</h3>
                     <p>
                       Lingua:{" "}
                       <img
@@ -76,7 +76,7 @@ function MoviesList({ movies, series }) {
                         className="language-flag"
                       />
                     </p>
-                    <p className="series-vote">Voto: {getStars(serie.vote_average)}</p>
+                    <p className="vote">Voto: {getStars(serie.vote_average)}</p>
                   </div>
                 </div>
               </div>
